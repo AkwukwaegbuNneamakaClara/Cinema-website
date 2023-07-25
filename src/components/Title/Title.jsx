@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Header.css'; // Import the CSS file
+import './Title.css'; // Import the CSS file
 
 
-function HomePage() {
+function Title() {
   return (
     <header style={headerStyle}>
       <div className="logo">
-        <img src="/path/to/logo.png" alt="Feature Flicks Logo" />
+        <img src="/path/to/logo.jpg" alt="Cenima Website Logo" />
         <span>Feature Flicks</span>
       </div>
       <nav>
@@ -42,4 +42,4 @@ const navListStyle = {
   gap: '1rem',
 };
 
-export default HomePage;
+export default Title;
