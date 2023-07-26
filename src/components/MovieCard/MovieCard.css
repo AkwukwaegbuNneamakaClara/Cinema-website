@@ -1,0 +1,27 @@
+/* MovieCard component specific styles */
+
+/* Container for the movie card */
+.movie-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+  }
+  
+  /* Styling for the movie poster image */
+  .movie-card img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Styling for the movie title */
+  .movie-card h3 {
+    margin: 10px 0;
+  }
+  
+  /* Styling for the movie length */
+  .movie-card p {
+    font-size: 14px;
+    color: #888;
+  }
+  

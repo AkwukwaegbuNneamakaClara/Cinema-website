@@ -1,0 +1,26 @@
+/* ScreeningList component specific styles */
+
+/* Container for the entire screening list */
+.screening-list {
+    margin: 20px 0;
+  }
+  
+  /* Styling for the date headline */
+  .screening-list h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for the screening card */
+  .screening-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Styling for the screening card's poster image */
+  .screening-card img {
+    max-width: 100%;
+    height: auto;
+  }
+  
