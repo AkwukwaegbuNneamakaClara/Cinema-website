@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Title from './components/Title/Title'; // Adjust the import path
 
 import MovieList from './components/MovieList/MovieList';
-import MovieDetails from './components/MovieDetails';
-import BookingPage from './components/BookingPage';
+import MovieDetails from './components/MovieDetails/MovieDetails';
+import BookingPage from './components/BookingPage/BookingPage';
 import ScreeningList from './components/ScreeningList/ScreeningList'; // Import the ScreeningList component
 import sampleMovies from './components/sampleMoviesData'; // Import the sampleMovies data
 import sampleScreeningListData from './components/sampleScreeningListData'; // Import the sampleScreenings data

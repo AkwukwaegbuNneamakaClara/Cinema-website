@@ -1,0 +1,27 @@
+/* moviedetails.css */
+
+.movie-details {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .poster img {
+    max-width: 200px;
+    height: auto;
+    margin-right: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .info {
+    flex: 1;
+  }
+  
+  .info h2 {
+    margin-bottom: 10px;
+  }
+  
+  .info p {
+    margin: 5px 0;
+  }
+  

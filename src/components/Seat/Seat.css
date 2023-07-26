@@ -1,0 +1,25 @@
+/* SeatComponent.css */
+.seat {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .seat.selected {
+    background-color: #f0ad4e; /* Change the background color of selected seats */
+    color: #fff; /* Change the text color of selected seats */
+  }
+  
+  .seat.booked {
+    background-color: #ccc; /* Change the background color of booked seats */
+    color: #000; /* Change the text color of booked seats */
+  }
+  
+  /* Add any additional custom styles for the seat component based on other states */
+  

@@ -1,0 +1,59 @@
+/* bookingPage.css */
+
+.booking-page {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  .auditorium-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .seat-row {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .seat {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .seat.selected {
+    background-color: #f0ad4e; /* Change the background color of selected seats */
+    color: #fff; /* Change the text color of selected seats */
+  }
+  
+  .selected-seats {
+    margin-bottom: 20px;
+  }
+  
+  .selected-seats h3 {
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #007bff; /* Customize the button background color */
+    color: #fff; /* Customize the button text color */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Customize the button background color on hover */
+  }
+  

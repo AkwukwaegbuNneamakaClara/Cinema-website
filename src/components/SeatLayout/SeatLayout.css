@@ -1,0 +1,31 @@
+/* seatlayout.css */
+
+.seat-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .seat-row {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .seat {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .seat.selected {
+    background-color: #f0ad4e; /* Change the background color of selected seats */
+    color: #fff; /* Change the text color of selected seats */
+  }
+  
+  /* Add any additional custom styles for the seat layout as needed */
+  
