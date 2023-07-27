@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './MovieList.css'; // Import the MovieList.css file
-import MovieCard from './MovieCard/MovieCard'; // Import the MovieCard component
-import MovieDetails from './MovieDetails/MovieDetails'; // Import the MovieDetails component
-import './MovieDetails.css'; // Import the moviedetails.css file
+import MovieDetails from '../MovieDetails/MovieDetails'; // Import the MovieDetails component
+import MovieCard from '../MovieCard/MovieCard'; // Import the MovieCard component
 
 function MovieList({ movies }) {
     const [selectedMovie, setSelectedMovie] = useState(null);

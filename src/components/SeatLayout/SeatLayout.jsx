@@ -1,7 +1,7 @@
 //import React, { useState } from 'react';
 import React from 'react';
 import './SeatLayout.css'; // Import the SeatLayout.css file
-import Seat from './Seat/Seat'; // Import the SeatComponent
+import Seat from '../Seat/Seat'; // Import the SeatComponent
 
 
 function SeatLayout({ auditoriumLayout, selectedSeats, onSeatSelect }) {
@@ -22,7 +22,7 @@ function SeatLayout({ auditoriumLayout, selectedSeats, onSeatSelect }) {
             >
               {seat}
             </div>*/
-            <SeatComponent
+            <Seat
               key={seat}
               seat={seat}
               status={selectedSeats.includes(seat) ? 'selected' : 'available'}

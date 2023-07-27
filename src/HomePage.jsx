@@ -6,7 +6,7 @@ import MovieList from './components/MovieList/MovieList';
 import MovieDetails from './components/MovieDetails/MovieDetails';
 import BookingPage from './components/BookingPage/BookingPage';
 import ScreeningList from './components/ScreeningList/ScreeningList'; // Import the ScreeningList component
-import sampleMovies from './components/sampleMoviesData'; // Import the sampleMovies data
+import sampleMovies from './components/sampleMovieData'; // Import the sampleMovies data
 import sampleScreeningListData from './components/sampleScreeningListData'; // Import the sampleScreenings data
 
 import './HomePage.css'; // Import the app.css file
@@ -20,8 +20,7 @@ function HomePage() {
         <Title /> {/* This line includes the Title component */}
         <h1>Now Showing</h1>
         <Switch>
-          <Route exact path="/" component={MovieList} />
-          <MovieList movies={sampleMovies} />
+        <Route exact path="/" render={() => <MovieList movies={sampleMovies} />} />
           <Route path="/movies/:id" component={MovieDetails} />
           <Route path="/booking/:id" component={BookingPage} />
           {/* Add more routes for other pages if needed */}

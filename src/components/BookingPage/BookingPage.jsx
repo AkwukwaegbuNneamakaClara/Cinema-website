@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './BookingPage.css'; // Import the BookingPage.css file
-import SeatLayout from './SaetLayout/SeatLayout'; // Import the SeatLayout component
+import SeatLayout from '../SeatLayout/SeatLayout'; // Import the SeatLayout component
 
 function BookingPage() {
   // State to store the selected seats
@@ -24,6 +24,14 @@ function BookingPage() {
       // If the seat is not selected, add it to the list
       setSelectedSeats([...selectedSeats, seat]);
     }
+  };
+  // Function to handle the completion of the booking
+  const handleCompleteBooking = () => {
+    // Logic to complete the booking
+    // For example, you can make an API call to store the booking details on the server.
+    // After the successful booking, you can show a confirmation message or redirect the user to a confirmation page.
+    //console.log('Booking completed!', selectedSeats);
+    alert(`Booking completed! Selected Seats: ${selectedSeats.join(', ')}`);
   };
 
  /* return (

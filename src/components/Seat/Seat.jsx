@@ -1,7 +1,7 @@
 import React from 'react';
 import './Seat.css'; // Import the SeatComponent.css file
 
-function SeatComponent({ seat, status, onSeatClick }) {
+function Seat({ seat, status, onSeatClick }) {
   // Function to handle seat click
   const handleClick = () => {
     onSeatClick(seat);
