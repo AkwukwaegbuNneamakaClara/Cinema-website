@@ -1,0 +1,20 @@
+/* ScreeningCard.css */
+.screening-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .screening-card p {
+    margin: 5px 0;
+  }
+  
+  .screening-card img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+  }
+  
