@@ -9,10 +9,12 @@ function SeatLayout({ auditoriumLayout, selectedSeats, onSeatSelect }) {
   const handleSeatSelect = (seat) => {
     onSeatSelect(seat);
   };
+  
+  
 
   return (
     <div className="seat-layout">
-      {auditoriumLayout.map((row, rowIndex) => (
+      {auditoriumLayout.slice().reverse().map((row, rowIndex) => (
         <div key={rowIndex} className="seat-row">
           {row.map((seat) => (
             /*<div

@@ -1,26 +1,28 @@
 /* seatlayout.css */
 
 .seat-layout {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
-    gap: 10px;
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Add some vertical spacing between the rows */
+    padding: 20px;
   }
   
   .seat-row {
     display: flex;
-    justify-content: center;
-  }
+    gap: 10px; /* Add some horizontal spacing between the seats */
+}
   
   .seat {
-    width: 40px;
-    height: 40px;
-    border: 1px solid #ccc;
+    width: 60px;
+    height: 60px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc;
+  border: 1px solid #555;
+  cursor: pointer;
+}
   
   .seat.selected {
     background-color: #f0ad4e; /* Change the background color of selected seats */
