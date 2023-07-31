@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom'; // Import the useParams hook
+//import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useHistory, useParams } from 'react-router-dom'; // Import the useParams hook
 import './BookingPage.css'; // Import the BookingPage.css file
 import SeatLayout from '../SeatLayout/SeatLayout'; // Import the SeatLayout component
 import sampleMovies from '../sampleMovieData'; // Import the sampleMovies data
-import BookingSum from '../BookingConfirm/BookingSum'; // Import the BookingSummary component
+import BookingSummary from '../BookingConfirm/BookingSummary'; // Import the BookingSummary component
 import BookingConfirm from '../BookingConfirm/BookingConfirm'; // Import the BookingConfirmation component
+import { getRestData } from '../../api'; // Import the getRestData function
+import ScreeningList from '../ScreeningList/ScreeningList'; // Import the ScreeningList component
+import MovieDetails from '../MovieDetails/MovieDetails';
+import sampleScreeningListData from '../sampleScreeningListData'; // Import the sampleScreeningListData
 
 function BookingPage() {
   // Get the movie ID from the URL params
@@ -14,6 +19,50 @@ function BookingPage() {
   // State to store the selected seats
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [bookingConfirmed, setBookingConfirmed] = useState(false);
+  const [bookingInfo, setBookingInfo] = useState(null);
+
+  // State to store the fetched data from the REST API
+ // const [restData, setRestData] = useState(null);
+  const [sampleScreeningListData, setSampleScreeningListData] = useState([]); 
+  const [movie, setMovie] = useState(null);
+  //const [movieData, setMovieData] = useState([]);
+    
+  // Fetch data from the REST API when the component mounts
+ /* useEffect(() => {
+    const fetchData = async () => {
+      const data = await getRestData();
+      setRestData(data);
+    };
+    fetchData();
+  }, []);*/
+  /*useEffect(() => {
+    // Fetch movie data from the REST API and store it in the movieData state
+    getRestData()
+      .then((data) => { console.log('Fetched data:', data); // Log the fetched data to check its structure
+      // Sort screenings by date for each movie
+         // Sort screenings by date for each movie
+      data.forEach((movie) => {
+        movie.screenings.sort((a, b) => new Date(a.date) - new Date(b.date));
+      });
+
+      setSampleScreeningListData(data);
+      // Set the selected movie and its screenings based on the provided ID
+      const selectedMovie = data.find((movie) => movie.id === id);
+      console.log('Selected movie:', selectedMovie); // Log the selected movie to check its details
+      if (selectedMovie) {
+        setMovie(selectedMovie);
+      }
+    })
+    .catch((error) => {
+      console.error('Error fetching data:', error);
+    });
+    
+  }, [id]);*/
+  // Handle category change
+  
+   // Filter screenings based on the selected category
+   
+
 
   // Sample auditorium seat layout (you can customize this based on your needs)
   const auditoriumLayout = [
@@ -47,15 +96,18 @@ function BookingPage() {
     //console.log('Booking completed!', selectedSeats);
     alert(`Booking completed! Selected Seats: ${selectedSeats.join(', ')}`);
   
-    const bookingInfo = {
-      totalPrice: calculateTotalPrice(),
+    // For this example, we will just set the booking info state
+    const totalPrice = calculateTotalPrice();
+    const bookingNumber = generateBookingNumber();
+    const bookingData = {
+      totalPrice: totalPrice,
       date: '2023-07-31',
       time: '15:00',
       seatNumbers: selectedSeats,
-      bookingNumber: 'ABC123',
+      bookingNumber: bookingNumber,
     };
-    // Set the bookingConfirmed state to true to show the confirmation.
     setBookingConfirmed(true);
+    setBookingInfo(bookingData);
   };
     // Function to calculate the total price based on the number of visitors and their age
     const calculateTotalPrice = () => {
@@ -79,8 +131,16 @@ function BookingPage() {
   
   return totalPrice;
   };
+  // Function to generate a random booking number
+  const generateBookingNumber = () => {
+    // Your booking number generation logic here...
+    // Replace this with your actual booking number generation logic
+    return 'ABC123';
+  };
+
   return (
     <div className="booking-page">
+
       {selectedMovie && (
         <div className="movie-details">
           <div className="poster">
@@ -93,7 +153,33 @@ function BookingPage() {
           </div>
         </div>
       )}
+      {bookingConfirmed ? (
+        // If booking is confirmed, show the BookingConfirm component with the bookingInfo
+        <BookingConfirm bookingInfo={bookingInfo} />
+      ) : (
+        // If booking is not confirmed, show the BookingSummary component to select seats
+        <BookingSummary
+          selectedSeats={selectedSeats}
+          onSelectSeats={handleSeatSelect}
+          onCompleteBooking={handleCompleteBooking}
+        />
+      )}
       
+      {/* Your other JSX code */}
+      {sampleScreeningListData?.map((movie) => (
+        <div key={movie.id}>
+          <h2>{movie.title}</h2>
+          {movie.dates.map((dateEntry) => (
+            <div key={dateEntry.date}>
+              <p>Date: {dateEntry.date}</p>
+              <p>Times: {dateEntry.times.join(', ')}</p>
+            </div>
+          ))}
+        </div>
+      ))}
+     
+  
+
       <h2>Choose Your Seats</h2>
       {/* Render the SeatLayout component with the necessary props */}
       <SeatLayout
