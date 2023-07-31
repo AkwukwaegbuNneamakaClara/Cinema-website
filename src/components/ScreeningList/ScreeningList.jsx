@@ -1,9 +1,8 @@
 import React from 'react';
-import './ScreeningList.css'; // Import the ScreeningList.css file
-//import ScreeningCard from './SceaningCard/ScreeningCard'; // Import the ScreeningCard component
+import { Link } from 'react-router-dom';
+import './ScreeningList.css';
 
-function ScreeningList({ screenings }) {
-  // Create an object to group screenings by date
+function ScreeningList({ screenings, selectedCategory }) {
   const screeningsByDate = screenings.reduce((acc, screening) => {
     const date = new Date(screening.date).toLocaleDateString('en-GB');
 
@@ -15,19 +14,28 @@ function ScreeningList({ screenings }) {
     return acc;
   }, {});
 
+  const filteredScreenings =
+    selectedCategory === 'all'
+      ? screenings
+      : screenings.filter((screening) => screening.category === selectedCategory);
+
   return (
     <div className="screening-list">
+      {/* ... */}
       {Object.entries(screeningsByDate).map(([date, screenings]) => (
         <div key={date}>
           <h2>{date}</h2>
           {screenings.map((screening) => (
-            <div key={screening.id} className="screening-card">
-              <p>Date: {screening.date}</p>
-              <p>Time: {screening.time}</p>
-              <p>Title: {screening.title}</p>
-              <img src={screening.poster} alt={screening.title} />
-              {/* Add more screening details as needed */}
-            </div>
+            <Link to={`/booking/${screening.id}`} key={screening.id} className="movie-link">
+              <div className="screening-card">
+                <p>Date: {screening.date}</p>
+                <p>Time: {screening.time}</p>
+                <p>Title: {screening.title}</p>
+                <p>Length: {screening.length}</p>
+                <p>Category: {screening.category}</p>
+                <img src={screening.poster} alt={screening.title} />
+              </div>
+            </Link>
           ))}
         </div>
       ))}
