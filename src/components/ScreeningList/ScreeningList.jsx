@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 import './ScreeningList.css';
 
 function ScreeningList({ screenings, selectedCategory }) {
+
+  if (!screenings) {
+    // Return null or some fallback JSX if screenings is not available
+    return null;
+  }
+
   const screeningsByDate = screenings.reduce((acc, screening) => {
     const date = new Date(screening.date).toLocaleDateString('en-GB');
 

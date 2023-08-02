@@ -5,6 +5,7 @@ import './BookingPage.css'; // Import the BookingPage.css file
 import SeatLayout from '../SeatLayout/SeatLayout'; // Import the SeatLayout component
 import sampleMovies from '../sampleMovieData'; // Import the sampleMovies data
 import BookingSummary from '../BookingConfirm/BookingSummary'; // Import the BookingSummary component
+import { Link } from 'react-router-dom';
 import BookingConfirm from '../BookingConfirm/BookingConfirm'; // Import the BookingConfirmation component
 import { getRestData } from '../../api'; // Import the getRestData function
 import ScreeningList from '../ScreeningList/ScreeningList'; // Import the ScreeningList component
@@ -25,6 +26,7 @@ function BookingPage() {
  // const [restData, setRestData] = useState(null);
   const [sampleScreeningListData, setSampleScreeningListData] = useState([]); 
   const [movie, setMovie] = useState(null);
+  
   //const [movieData, setMovieData] = useState([]);
     
   // Fetch data from the REST API when the component mounts
@@ -193,6 +195,10 @@ function BookingPage() {
         <p>{selectedSeats.join(', ')}</p>
       </div>
       <button onClick={handleCompleteBooking}>Complete Booking</button>
+      {/* Button to go back to the homepage */}
+      {bookingConfirmed && (
+        <Link to="/">Back to HomePage</Link>
+      )}
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import './MovieList.css'; // Import the MovieList.css file
 import MovieCard from '../MovieCard/MovieCard'; // Import the MovieCard component
 import MovieDetails from '../MovieDetails/MovieDetails';
@@ -8,6 +8,7 @@ import CategoryFilter from '../CategoryFilter/CategoryFilter'; // Import the Cat
 function MovieList({ movies }) {
     const [selectedMovie, setSelectedMovie] = useState(null);
     const [selectedCategory, setSelectedCategory] = useState('');
+    const history = useHistory();
   
     // Function to handle movie selection
     const handleMovieSelect = (movie) => {
@@ -22,8 +23,12 @@ function MovieList({ movies }) {
    ? movies.filter((movie) => movie.category === selectedCategory)
    : movies;
     // Get all unique categories for the category filter
-  const allCategories = Array.from(new Set(movies.map((movie) => movie.category)));
+    const allCategories = Array.from(new Set(movies.map((movie) => movie.category)));
 
+    const handleClick = (movieId) => {
+      // Navigate to the BookingPage with the selected movie's ID as a parameter
+      history.push(`/booking/${movieId}`);
+    };
   return (
     <div>
       <CategoryFilter
@@ -35,6 +40,7 @@ function MovieList({ movies }) {
     {filteredMovies.map((movie) => (
          //<MovieCard key={movie.id} movie={movie} onClick={() => handleMovieSelect(movie)} />
       <Link key={movie.id} to={`/booking/${movie.id}`} onClick={() => handleMovieSelect(movie)}>
+           <button onClick={() => handleClick(movie.id)}>Book Now</button>
             <MovieCard movie={movie} />
           </Link>
          ))}
