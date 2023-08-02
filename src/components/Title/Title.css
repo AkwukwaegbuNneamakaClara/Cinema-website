@@ -1,10 +1,10 @@
-/* Header container styles */
+
 title {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    background-color: #007bff;
+    background-color: #da3f07;
     color: #fff;
   }
   
@@ -12,16 +12,16 @@ title {
   .logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 2.5rem;
   }
   
   .logo img {
-    height: 40px;
+    height: 70px;
     width: auto;
   }
   
   .logo span {
-    font-size: 1.5rem;
+    font-size: 3.5rem;
   }
   
   /* Navigation styles */
@@ -33,7 +33,7 @@ title {
   }
   
   nav li a {
-    color: #fff;
+    color: #f0f0f0;
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.2s ease;

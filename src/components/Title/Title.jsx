@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Title.css'; // Import the CSS file
+import './Title.css'; 
 
 
 function Title() {
   return (
-    <header style={headerStyle}>
+    <title style={titleStyle}>
       <div className="logo">
-        <img src="/path/to/logo.jpg" alt="Cenima Website Logo" />
+        <img src="/logo.jpg" alt="Cenima Website Logo" />
         <span>Feature Flicks</span>
       </div>
       <nav>
@@ -18,15 +18,15 @@ function Title() {
           <li>
             <Link to="/about">About</Link>
           </li>
-          {/* Add more navigation links as needed */}
+       
         </ul>
       </nav>
-    </header>
+    </title>
   );
 }
 
 // Styles
-const headerStyle = {
+const titleStyle = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',

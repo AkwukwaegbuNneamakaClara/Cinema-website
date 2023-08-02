@@ -1,5 +1,5 @@
 import React from 'react';
-import './MovieDetails.css'; // Import the MovieDetails.css file
+import './MovieDetails.css'; 
 
 function MovieDetails({ movie }) {
   return (
@@ -10,7 +10,7 @@ function MovieDetails({ movie }) {
       <div className="info">
         <h2>{movie.title}</h2>
         <p>Length: {movie.length}</p>
-        {/* Add more movie details as needed */}
+     
       </div>
     </div>
   );

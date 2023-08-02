@@ -1,4 +1,4 @@
-/* SeatComponent.css */
+
 .seat {
     width: 40px;
     height: 40px;
@@ -21,5 +21,4 @@
     color: #000; /* Change the text color of booked seats */
   }
   
-  /* Add any additional custom styles for the seat component based on other states */
-  
+ 

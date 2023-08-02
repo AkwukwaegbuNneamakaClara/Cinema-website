@@ -25,14 +25,14 @@ h1, h2, h3, h4, h5, h6 {
 button {
   padding: 10px 20px;
   border: none;
-  background-color: #007bff;
+  background-color: #9c0b48;
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #007bff;
 }
 
 /* Add more global styles as needed */

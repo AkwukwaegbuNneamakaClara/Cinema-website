@@ -1,5 +1,5 @@
 import React from 'react';
-import './ScreeningCard.css'; // Import the ScreeningCard.css file
+import './ScreeningCard.css'; 
 
 function ScreeningCard({ screening }) {
   const { date, time, title, poster, length } = screening;
@@ -11,7 +11,7 @@ function ScreeningCard({ screening }) {
       <p>Title: {title}</p>
       <p>Length: {length}</p>
       <img src={poster} alt={title} />
-      {/* Add more screening details as needed */}
+     
     </div>
   );
 }

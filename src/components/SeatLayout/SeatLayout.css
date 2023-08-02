@@ -1,4 +1,3 @@
-/* seatlayout.css */
 
 .seat-layout {
     display: flex;
@@ -26,8 +25,7 @@
   
   .seat.selected {
     background-color: #f0ad4e; /* Change the background color of selected seats */
-    color: #fff; /* Change the text color of selected seats */
+    color: #fff; 
   }
   
-  /* Add any additional custom styles for the seat layout as needed */
   

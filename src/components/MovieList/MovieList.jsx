@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import './MovieList.css'; // Import the MovieList.css file
-import MovieCard from '../MovieCard/MovieCard'; // Import the MovieCard component
+import './MovieList.css'; 
+import MovieCard from '../MovieCard/MovieCard'; 
 import MovieDetails from '../MovieDetails/MovieDetails';
-import CategoryFilter from '../CategoryFilter/CategoryFilter'; // Import the CategoryFilter component
+import CategoryFilter from '../CategoryFilter/CategoryFilter'; 
 
 function MovieList({ movies }) {
     const [selectedMovie, setSelectedMovie] = useState(null);

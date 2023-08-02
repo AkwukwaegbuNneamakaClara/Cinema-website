@@ -2,10 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './ScreeningList.css';
 
-function ScreeningList({ screenings, selectedCategory }) {
+function ScreeningList({ screenings, selectedCategory, onSelectCategory }) {
 
   if (!screenings) {
-    // Return null or some fallback JSX if screenings is not available
     return null;
   }
 
@@ -20,13 +19,10 @@ function ScreeningList({ screenings, selectedCategory }) {
     return acc;
   }, {});
 
-  const filteredScreenings =
-    selectedCategory === 'all'
-      ? screenings
-      : screenings.filter((screening) => screening.category === selectedCategory);
 
   return (
     <div className="screening-list">
+      
       {/* ... */}
       {Object.entries(screeningsByDate).map(([date, screenings]) => (
         <div key={date}>
@@ -46,6 +42,7 @@ function ScreeningList({ screenings, selectedCategory }) {
         </div>
       ))}
     </div>
+    
   );
 }
 

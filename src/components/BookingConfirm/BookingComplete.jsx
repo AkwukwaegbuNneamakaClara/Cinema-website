@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import BookingConfirm from './BookingConfirm'; // Import the BookingConfirmation component
+import BookingConfirm from './BookingConfirm';
 
 function BookingComplete() {
-  // Example booking details (replace with the actual booking details)
+  
   const [bookingInfo, setBookingInfo] = useState({
     totalPrice: 200, // Replace with the actual total price
     date: '2023-07-30', // Replace with the actual screening date

@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import Title from './components/Title/Title'; // Adjust the import path
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Title from './components/Title/Title'; 
 import MovieList from './components/MovieList/MovieList';
 import MovieDetails from './components/MovieDetails/MovieDetails';
 import BookingPage from './components/BookingPage/BookingPage';
-import ScreeningList from './components/ScreeningList/ScreeningList'; // Import the ScreeningList component
-import sampleMovies from './components/sampleMovieData'; // Import the sampleMovies data
-import sampleScreeningListData from './components/sampleScreeningListData'; // Import the sampleScreenings data
-import CategoryFilter from './components/CategoryFilter/CategoryFilter'; // Import the CategoryFilter component
-import { getRestData } from './api'; // Import the getRestData function (if this is your API utility function)
+import ScreeningList from './components/ScreeningList/ScreeningList'; 
+import sampleMovies from './components/sampleMovieData'; 
+import sampleScreeningListData from './components/sampleScreeningListData'; 
+import CategoryFilter from './components/CategoryFilter/CategoryFilter'; 
+import { getRestData } from './api'; 
 
-import './HomePage.css'; // Import the app.css file
+import './HomePage.css'; 
 
 
 
@@ -46,10 +45,8 @@ function HomePage() {
   return (
     <Router>
       <div>
-        <Title /> {/* This line includes the Title component */}
-        <Link to="/">Home</Link>
-<Link to="/movies">Movie List</Link>
-<Link to="/booking">Booking</Link>
+        <Title /> 
+
         <Switch>
         <Route exact path="/" render={() => <MovieList movies={sampleMovies} />} />
           <Route path="/movies/:id" component={MovieDetails} />

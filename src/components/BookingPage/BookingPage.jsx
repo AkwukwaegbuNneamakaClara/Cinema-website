@@ -1,16 +1,12 @@
-//import React from 'react';
-import React, { useState, useEffect } from 'react';
-import { useHistory, useParams } from 'react-router-dom'; // Import the useParams hook
-import './BookingPage.css'; // Import the BookingPage.css file
-import SeatLayout from '../SeatLayout/SeatLayout'; // Import the SeatLayout component
-import sampleMovies from '../sampleMovieData'; // Import the sampleMovies data
-import BookingSummary from '../BookingConfirm/BookingSummary'; // Import the BookingSummary component
+
+import React, { useState} from 'react';
+import {useParams } from 'react-router-dom'; 
+import './BookingPage.css'; 
+import SeatLayout from '../SeatLayout/SeatLayout'; 
+import sampleMovies from '../sampleMovieData'; 
+import BookingSummary from '../BookingConfirm/BookingSummary'; 
 import { Link } from 'react-router-dom';
-import BookingConfirm from '../BookingConfirm/BookingConfirm'; // Import the BookingConfirmation component
-import { getRestData } from '../../api'; // Import the getRestData function
-import ScreeningList from '../ScreeningList/ScreeningList'; // Import the ScreeningList component
-import MovieDetails from '../MovieDetails/MovieDetails';
-import sampleScreeningListData from '../sampleScreeningListData'; // Import the sampleScreeningListData
+import BookingConfirm from '../BookingConfirm/BookingConfirm'; 
 
 function BookingPage() {
   // Get the movie ID from the URL params
@@ -24,8 +20,7 @@ function BookingPage() {
 
   // State to store the fetched data from the REST API
  // const [restData, setRestData] = useState(null);
-  const [sampleScreeningListData, setSampleScreeningListData] = useState([]); 
-  const [movie, setMovie] = useState(null);
+  const [sampleScreeningListData] = useState([]);
   
   //const [movieData, setMovieData] = useState([]);
     
@@ -66,18 +61,18 @@ function BookingPage() {
    
 
 
-  // Sample auditorium seat layout (you can customize this based on your needs)
+  
   const auditoriumLayout = [
     // An array representing each row of seats
-    ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9', 'A10'],
-    ['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B9', 'B10'],
-    ['C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9', 'C10'],
-    ['D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7', 'D8', 'D9', 'D10'],
-    ['E1', 'E2', 'E3', 'E4', 'E5', 'E6', 'E7', 'E8', 'E9', 'E10'],
-    ['F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10'],
-    ['G1', 'G2', 'G3', 'G4', 'G5', 'G6', 'G7', 'G8', 'G9', 'G10'],
-    ['H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'H7', 'H8', 'H9', 'H10'],
-    // Add more rows as needed
+    ['71', '72', '73', '74', '75', '76', '77', '78', '79', '80'],
+    ['61', '62', '63', '64', '65', '66', '67', '68', '69', '70'],
+    ['51', '52', '53', '54', '55', '56', '57', '58', '59', '60'],
+    ['41', '42', '43', '44', '45', '46', '47', '48', '49', '50'],
+    ['31', '32', '33', '34', '35', '36', '37', '38', '39', '40'],
+    ['21', '22', '23', '24', '25', '26', '27', '28', '29', '30'],
+    ['11', '12', '13', '14', '15', '16', '17', '18', '19', '20'],
+    ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+    
   ];
 
   // Function to handle seat selection
@@ -92,9 +87,7 @@ function BookingPage() {
   };
   // Function to handle the completion of the booking
   const handleCompleteBooking = () => {
-    // Logic to complete the booking
-    // For example, you can make an API call to store the booking details on the server.
-    // After the successful booking, you can show a confirmation message or redirect the user to a confirmation page.
+   
     //console.log('Booking completed!', selectedSeats);
     alert(`Booking completed! Selected Seats: ${selectedSeats.join(', ')}`);
   
@@ -103,7 +96,7 @@ function BookingPage() {
     const bookingNumber = generateBookingNumber();
     const bookingData = {
       totalPrice: totalPrice,
-      date: '2023-07-31',
+      date: '2023-08-2',
       time: '15:00',
       seatNumbers: selectedSeats,
       bookingNumber: bookingNumber,
@@ -135,8 +128,7 @@ function BookingPage() {
   };
   // Function to generate a random booking number
   const generateBookingNumber = () => {
-    // Your booking number generation logic here...
-    // Replace this with your actual booking number generation logic
+    
     return 'ABC123';
   };
 
@@ -151,7 +143,7 @@ function BookingPage() {
           <div className="info">
             <h2>{selectedMovie.title}</h2>
             <p>Length: {selectedMovie.length}</p>
-            {/* Add more movie details as needed */}
+          
           </div>
         </div>
       )}
@@ -167,7 +159,7 @@ function BookingPage() {
         />
       )}
       
-      {/* Your other JSX code */}
+    
       {sampleScreeningListData?.map((movie) => (
         <div key={movie.id}>
           <h2>{movie.title}</h2>

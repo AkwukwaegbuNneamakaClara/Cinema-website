@@ -1,5 +1,5 @@
 import React from 'react';
-import './BookingConfirm.css'; // Import the BookingConfirmation.css file
+import './BookingConfirm.css'; 
 
 function BookingConfirm({ bookingInfo }) {
   // Destructure the bookingInfo object to get individual details
@@ -13,7 +13,7 @@ function BookingConfirm({ bookingInfo }) {
       <p>Seat Numbers: {seatNumbers.join(', ')}</p>
       <p>Total Price: SEK {totalPrice}</p>
       <p>Booking Number: {bookingNumber}</p>
-      {/* Add any additional booking details as needed */}
+      
     </div>
   );
 }

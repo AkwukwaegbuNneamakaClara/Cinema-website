@@ -1,5 +1,5 @@
 import React from 'react';
-import './Seat.css'; // Import the SeatComponent.css file
+import './Seat.css'; 
 
 function Seat({ seat, status, onSeatClick }) {
   // Function to handle seat click

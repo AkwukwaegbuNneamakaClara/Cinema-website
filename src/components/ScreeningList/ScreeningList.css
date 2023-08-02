@@ -1,14 +1,10 @@
-/* ScreeningList.css */
 
-/* Styles for the container div */
 .screening-list {
   margin: 20px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-
-/* Styles for the category filter */
 .category-filter {
   margin-bottom: 10px;
 }
@@ -26,7 +22,6 @@
   border-radius: 5px;
 }
 
-/* Styles for the screening cards */
 .screening-card {
   margin: 10px 0;
   padding: 10px;
@@ -39,7 +34,6 @@
   height: auto;
 }
 
-/* Styles for the date heading */
 h2 {
   font-size: 20px;
   font-weight: bold;
