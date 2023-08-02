@@ -13,10 +13,10 @@ function Title() {
       <nav>
         <ul style={navListStyle}>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Movie Data</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/about">Screening List Data</Link>
           </li>
        
         </ul>
